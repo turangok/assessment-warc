@@ -9,23 +9,20 @@ export const StyledIcon = styled.div`
 
 export const StyledCatCard = styled.div`
     background : white;
-    max-width: '18rem'; min-width: '13.75rem';
+    max-width: '21.25rem';
+    min-width: '21.25rem';
 
     .card-body {
        display: flex;
        flex-direction: column;
        align-items: center;
        justify-content: flex-end;
-
    }
-
-  
 `;
 
 export const StyledCatCardIcons = styled.div`
-display: flex;
-flex-direction: row; 
-justify-content: space-between;
-
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between;
 `
 

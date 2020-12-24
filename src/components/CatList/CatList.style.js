@@ -6,15 +6,16 @@ export const StyledCatList = styled.div`
     padding: 2rem;
     grid-gap: 2.5rem;
     min-width: 21.25rem;
+
     @media(max-width:80rem){
-    grid-template-columns : repeat(3, 1fr);    
+        grid-template-columns : repeat(3, 1fr);    
     }
 
     @media(max-width:60rem){
-    grid-template-columns : repeat(2, 1fr);
+        grid-template-columns : repeat(2, 1fr);
     }
 
-    @media(max-width:40rem){
-    grid-template-columns : repeat(1, 1fr);
+    @media(max-width: 34rem){
+        grid-template-columns : repeat(1, 1fr);
     }
 ` 

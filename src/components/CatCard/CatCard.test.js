@@ -5,7 +5,7 @@ import { CatCard } from '.';
 
 describe('<CatCard />', () => {
 
-    test('should render without props (Empty)', () => {
+    test('should render without props (Empty) and unfavourited', () => {
         const dataId = 'CatCard';
         const notFavourited = "emptyHeart"
 
@@ -14,7 +14,7 @@ describe('<CatCard />', () => {
         expect(getByTestId(notFavourited)).toBeInTheDocument();
     });
 
-    test('should render with name prop', () => {
+    test('should render with likes, dislikes, image and favourite prop', () => {
         const likes = 123;
         const dislikes = 456;
         const favourited = "solidHeart"

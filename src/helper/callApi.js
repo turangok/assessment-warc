@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const callApi = async ({ url, method = 'get', params, data, key = '' }) => {
 
-    let aaa = [];
+    let response = [];
     await axios({
         baseURL: process.env.REACT_APP_CAT_API_URL,
         url: `${url}/${key}`,
@@ -15,15 +15,13 @@ export const callApi = async ({ url, method = 'get', params, data, key = '' }) =
             'x-api-key': process.env.REACT_APP_CAT_API_KEY
         }
     })
-        .then(response => {
-            // console.log("tg..05 after axios response:", method, ' ', url, ' ', response.data);
-            // return response.data;
-            aaa = [...response.data];
+        .then(resp => {
+            response = [...resp.data];
         })
 
         .catch(error => {
             console.log('Api message:', error)
         })
-    return aaa;
+    return response;
 };
 

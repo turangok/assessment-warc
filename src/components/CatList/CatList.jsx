@@ -4,14 +4,6 @@ import { CatCard } from '../CatCard';
 import { StyledCatList } from './CatList.style';
 
 export const CatList = ({ images, favourites, votes, setFav, setLike }) => {
-  //   console.log(
-  //     'tg..catsData images',
-  //     JSON.stringify(images),
-  //     ' favourites',
-  //     JSON.stringify(favourites),
-  //     ' votes',
-  //     JSON.stringify(votes)
-  //   );
   return (
     <StyledCatList data-testid="CatList">
       {images?.map((image) => {

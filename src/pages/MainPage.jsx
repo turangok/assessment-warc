@@ -11,29 +11,6 @@ const MainPage = () => {
   const [selectedFile, setSelectedFile] = useState();
 
   const getCatsData = useCallback(() => {
-    // callApi({
-    //   url: `favourites`,
-    //   key: 2042001,
-    //   method: 'DELETE',
-    // });
-
-    // callApi = async ({ url, method = 'get', data, headers }) => {
-
-    // callApi({
-    //   url: '/favourites',
-    //   method: 'post',
-    //   data: { 'image_id': 'f123', 'sub_id': 'g123' },
-    // });
-
-    // callApi({
-    //   url: '/votes',
-    //   method: 'post',
-    //   data: {
-    //     'image_id': 'asf2',
-    //     'sub_id': 'my-user-1234',
-    //     'value': 1,
-    //   },
-    // });
     callApi({ url: 'images', params: { limit: 100 } }).then((response) =>
       setImages(response)
     );
@@ -71,8 +48,6 @@ const MainPage = () => {
 
   const setLike = useCallback(
     (id, isLike) => {
-      console.log('id:', id, ' isLike:', isLike);
-
       callApi({
         url: '/votes',
         method: 'post',
@@ -89,7 +64,6 @@ const MainPage = () => {
   );
 
   const onFileChange = (event) => {
-    console.log('file', event.target.files);
     setSelectedFile(event.target.files);
   };
 
@@ -112,12 +86,6 @@ const MainPage = () => {
       const formData = new FormData();
       formData.append('sub_id', 'user123');
       formData.append('file', selectedFile[0], selectedFile.name);
-
-      // for (const key in selectedFile[0]) {
-      //   formData.append(key, selectedFile[0][key]);
-      // }
-      console.log(selectedFile);
-
       uploadImage(formData);
     }
   };
